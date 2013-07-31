@@ -1,0 +1,8 @@
+Testsuite: gradebook.model.CourseTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+
+Testcase: createCourseNoPrereq took 0.01 sec
+Testcase: testAddClass took 0 sec
+Testcase: testAddPrereq took 0 sec
+Testcase: createCourseWithPrereq took 0 sec
+Testcase: testSetPrereqs took 0 sec

@@ -1,7 +1,6 @@
 package gradebook.model;
 
 import java.util.ArrayList;
-import java.text.DecimalFormat;
 
 /**
  * Creates default grading scheme that calculates using normal cutoffs
@@ -16,7 +15,6 @@ public class DefaultGradingScheme implements GradingScheme {
     private static final double D_DEFAULT = 60.0;
 
     private ArrayList<GradebookItem> items;
-    private DecimalFormat df = new DecimalFormat("#.00");
     private double score;
 
     public void updateGradebookItems(ArrayList<GradebookItem> items) {
@@ -29,7 +27,6 @@ public class DefaultGradingScheme implements GradingScheme {
             score += items.get(i).getScore()
                             * items.get(i).getCategory().getWeight() / size;
         }
-        score = Double.parseDouble(df.format(score));
         return score;
     }
 

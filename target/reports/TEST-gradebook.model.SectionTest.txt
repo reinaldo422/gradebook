@@ -1,0 +1,7 @@
+Testsuite: gradebook.model.SectionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+
+Testcase: testAddStudent took 0.009 sec
+Testcase: createSection took 0 sec
+Testcase: testCalculateSectionScores took 0.009 sec
+Testcase: testAddMultipleStudents took 0 sec

@@ -1,7 +1,6 @@
 package gradebook.model;
 
 import java.util.ArrayList;
-import java.text.DecimalFormat;
 
 /**
  * Creates a Student which has a section, a name and a list of gradebook items
@@ -13,7 +12,6 @@ public class Student implements Gradeable {
     private String name;
     private Section section;
     private double score;
-    private DecimalFormat df = new DecimalFormat("#.00");
 
     public Student(Section section, String name) {
         this.name = name;

@@ -1,7 +1,6 @@
 package gradebook.model;
 
 import java.util.ArrayList;
-import java.text.DecimalFormat;
 
 /**
  * Creates a Section which has a Class, a name and a list of students
@@ -14,7 +13,6 @@ public class Section implements Gradeable {
     private String name;
     private Class myClass;
     private double score;
-    private DecimalFormat df = new DecimalFormat("#.00");
 
     public Section(Class myClass, String name) {
         this.myClass = myClass;
@@ -45,7 +43,6 @@ public class Section implements Gradeable {
             total += students.get(i).calculateAvgScore(gradingScheme);
         }
         score = total / students.size();
-        score = Double.parseDouble(df.format(score));
         return score;
     }
 

@@ -1,19 +1,22 @@
 package gradebook.model;
 
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 /**
  * Creates a Course which has a subject, name and prerequisite Classes
  * @author Reinaldo Cruz
  */
 
-public class Course {
+public class Course implements Gradeable {
 
     private String subject;
     private int number;
     private String name;
     private ArrayList<Course> prerequisites;
     private ArrayList<Class> classes;
+    private double score;
+    private DecimalFormat df = new DecimalFormat("#.00");
 
     public Course(String subject, int number, String name) {
         this.subject = subject;
@@ -62,5 +65,23 @@ public class Course {
 
     public ArrayList<Class> getClasses() {
         return classes;
+    }
+
+    @Override
+    public double calculateAvgScore(GradingScheme gradingScheme) {
+        double total = 0;
+        for (int i = 0; i < classes.size(); i++) {
+            total += classes.get(i).calculateAvgScore(gradingScheme);
+        }
+        score = total / classes.size();
+        score = Double.parseDouble(df.format(score));
+        return score;
+    }
+
+    @Override
+    public String calculateGrade(GradingScheme gradingScheme) {
+        score = calculateAvgScore(gradingScheme);
+        String grade = gradingScheme.calculateGrade(score);
+        return grade;
     }
 }

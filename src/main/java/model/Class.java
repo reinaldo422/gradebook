@@ -1,7 +1,6 @@
 package gradebook.model;
 
 import java.util.ArrayList;
-import java.text.DecimalFormat;
 
 /**
  * Creates a Class which has a Course and a semester
@@ -14,7 +13,6 @@ public class Class implements Gradeable {
     private String semester;
     private Course course;
     private double score;
-    private DecimalFormat df = new DecimalFormat("#.00");
 
     public Class(Course course, String semester) {
         this.course = course;
@@ -45,7 +43,6 @@ public class Class implements Gradeable {
             total += sections.get(i).calculateAvgScore(gradingScheme);
         }
         score = total / sections.size();
-        score = Double.parseDouble(df.format(score));
         return score;
     }
 
